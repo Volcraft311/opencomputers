@@ -6,6 +6,7 @@ local function dig_and_move()
     turtle.dig()
     turtle.forward()
     turtle.digDown()
+    turtle.digUp()
 end
 
 local function dig_line(_depth)
