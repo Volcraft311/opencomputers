@@ -15,18 +15,20 @@ local function dig_line(_depth)
     end
 end
 
-local function back_and_right(dist)
+local function back(dist)
     for i = 1, dist, 1 do
         turtle.back()
     end
+end
+
+local function right()
     turtle.turnRight()
     dig_and_move()
     turtle.turnLeft()
 end
 
-
 for i = 1, wide - 1, 1 do
     dig_line(depth)
-    if wide == i + 1 then return end
-    back_and_right(depth)
+    back(depth)
+    right()
 end
