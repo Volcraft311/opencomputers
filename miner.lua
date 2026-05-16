@@ -27,9 +27,10 @@ local function right()
     turtle.turnLeft()
 end
 
-for i = 1, wide - 1, 1 do
+for i = 1, wide, 1 do
     dig_line(depth)
     back(depth)
-    if i == (wide - 2) then return end 
+    if i == (wide - 1) then goto continue end 
     right()
+    ::continue::
 end
