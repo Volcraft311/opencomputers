@@ -27,5 +27,6 @@ end
 
 for i = 1, wide - 1, 1 do
     dig_line(depth)
+    if wide == i + 1 then return end
     back_and_right(depth)
 end
