@@ -1,6 +1,6 @@
-if fs.exists("miner.lua") then
-    fs.delete("miner.lua")
+if fs.exists(args[1] .. ".lua") then
+    fs.delete(args[1] .. ".lua")
 end
-print("Downloading miner.lua...")
-shell.run("wget https://raw.githubusercontent.com/Volcraft311/opencomputers/main/miner.lua miner.lua")
-print("Updated successfully!")
+print("Downloading " .. args[1] .. ".lua...")
+shell.run("wget https://raw.githubusercontent.com/Volcraft311/opencomputers/main/" .. args[1] .. " " .. args[1])
+print(args[1] .. "Updated successfully!")
