@@ -1,5 +1,5 @@
-local wide = 10
-local depth = 10
+local wide = arg[1] - 1
+local depth = arg[2] - 1
 
 
 local function dig_and_move()
