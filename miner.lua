@@ -1,9 +1,12 @@
-local wide = arg[1]
-local depth = arg[2]
+local wide = tonumber(arg[2])
+local depth = tonumber(arg[1])
 
 
 local function dig_and_move()
-    turtle.dig()
+    while turtle.detect() do
+        turtle.dig()
+        os.sleep(0.5)
+    end
     turtle.forward()
     turtle.digDown()
     turtle.digUp()
@@ -30,7 +33,7 @@ end
 for i = 1, wide, 1 do
     dig_line(depth)
     back(depth)
-    if i == (wide - 1) then goto continue end 
-    right()
-    ::continue::
+    if (i < wide) then
+        right()
+    end
 end
