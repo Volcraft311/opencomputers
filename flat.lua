@@ -21,8 +21,14 @@ local function move_right()
     turtle.turnLeft()
 end
 
+local function go_back(dist)
+    for i=1, dist, 1 do
+        turtle.back()
+    end
+end
 
 for x = 1, right, 1 do
+    local dist = 0
     for z=1, forward, 1 do
         fill_below()
         if turtle.detect() then
@@ -30,9 +36,11 @@ for x = 1, right, 1 do
             goto skip_forward
         end
         turtle.forward()
+        dist = dist + 1
     end
     ::skip_forward::
-    if (x > right - 1) then
+    go_back(dist)
+    if (x < right) then
         move_right()
     end
 end
