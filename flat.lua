@@ -15,4 +15,19 @@ local function fill_below()
 end
 
 
+local function right()
+    turtle.turnRight()
+    turtle.forward()
+    turtle.turnLeft()
+end
+
+
 fill_below()
+
+
+for x = 1, forward, 1 do
+    for z=1, right, 1 do
+        fill_below()
+        right()
+    end
+end
