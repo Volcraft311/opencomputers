@@ -15,7 +15,7 @@ local function fill_below()
 end
 
 
-local function right()
+local function move_right()
     turtle.turnRight()
     turtle.forward()
     turtle.turnLeft()
@@ -25,9 +25,16 @@ end
 fill_below()
 
 
-for x = 1, forward, 1 do
-    for z=1, right, 1 do
+for x = 1, right, 1 do
+    for z=1, forward, 1 do
         fill_below()
-        right()
+        if turtle.detect() then
+            goto skip_forward
+        end
+        turtle.forward()
+    end
+    ::skip_forward::
+    if (x > right - 1) then
+        move_right()
     end
 end
