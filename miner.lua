@@ -18,12 +18,12 @@ local function dig_and_move()
         turtle.dig()
         os.sleep(0.5)
     end
-
+    turtle.forward()
+    dig_height()
 end
 
 local function dig_line(_depth)
     for i = 1, _depth, 1 do
-        dig_height()
         dig_and_move()
     end
 end
