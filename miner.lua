@@ -6,7 +6,7 @@ local height = tonumber(arg[3])
 local function dig_height()
     for i=1, height, 1 do
         turtle.digUp()
-        if (i > height) then
+        if (i < height) then
             turtle.up()
         end
     end
