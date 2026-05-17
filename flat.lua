@@ -3,7 +3,7 @@ local right = arg[2]
 
 local function fill_below()
     local depth = 0
-    while !turtle.detectDown() do
+    while not turtle.detectDown() do
        turtle.down()
        depth =  depth + 1
     end
