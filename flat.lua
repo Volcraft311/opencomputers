@@ -9,8 +9,8 @@ local function fill_below()
     end
     turtle.digDown()
     for i=1, depth, 1 do
-        turtle.placeDown("dirt")
         turtle.up()
+        turtle.placeDown("dirt")
     end
 end
 
@@ -33,12 +33,11 @@ for x = 1, right, 1 do
         fill_below()
         if turtle.detect() then
             print("Can't move forward!")
-            goto skip_forward
+            turtle.dig()
         end
         turtle.forward()
         dist = dist + 1
     end
-    ::skip_forward::
     go_back(dist)
     if (x < right) then
         move_right()
