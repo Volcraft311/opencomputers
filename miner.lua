@@ -7,6 +7,7 @@ local function dig_and_move()
         turtle.dig()
         os.sleep(0.5)
     end
+
     turtle.forward()
     turtle.digDown()
     turtle.digUp()
